@@ -6,6 +6,10 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+body {
+  position: relative;
+}
+
 nav {
   z-index: 1000;
   position: fixed;
@@ -65,16 +69,18 @@ nav {
   width: 90%;
   height: 60px;
   position: fixed;
-  top: 10px;
+  top: -200px;
   left: 50%;
   transform: translateX(-50%);
   margin-top: 70px;
-  z-index: 950;
+  z-index: 955;
   background-color: #5379dc;
   border-radius: 50px;
-  display: none;
+  transition: 0.1s ease-in-out;
+  /* display: none; */
 }
 .active {
+  top: 10px;
   display: block !important;
 }
 .info-content {
@@ -98,6 +104,23 @@ nav {
   color: #fff;
   opacity: 0.7;
   font-size: 18px;
+  position: relative;
+}
+.circle:nth-child(2)::after {
+	content: '';
+  position: absolute;
+  top: 10px;
+  left: 72.5%;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: red;
+}
+.circle:nth-child(2) ion-icon {
+	animation: beat 0.5s 0.03s infinite alternate;
+}
+@keyframes beat {
+	to { transform: scale(0.9); }
 }
 .circle img {
   width: 40px;
@@ -109,7 +132,7 @@ nav {
   height: 284px;
   width: 90%;
   position: fixed;
-  top: 243px;
+  top: 175px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 999;
@@ -131,18 +154,91 @@ nav {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   width: 100%;
-  height: 45%;
+  height: 40%;
   background-image: url("img/city3.jpg");
   background-color: #16aaff;
   background-size: cover;
 }
+.user-content .frame {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  width: 100%;
+  height: 100%;
+  background-color: #16aaff;
+  opacity: 0.8;
+}
+
+.user-data {
+  position: absolute;
+  top: 0;
+  height: 40%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.user-image img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.clg-details {
+  padding-right: 50px;
+}
+
+.clg-details .name {
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+.clg-details .course,
+.clg-details .place {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.logout {
+  color: #fff;
+  background-color: #444054;
+  border-color: #444054;
+  font-size: 12px;
+  vertical-align: middle;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 50px;
+  box-shadow: 0 0.125rem 0.625rem rgb(68 64 84 / 40%), 0 0.0625rem 0.125rem rgb(68 64 84 / 50%);
+}
+
 .activity {
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   background-color: #fff;
   width: 100%;
-  height: 55%;
+  height: 60%;
 }
+
+.activity p {
+  margin-top: 10px;
+  font-size: .73333rem;
+  color: #6c757d;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+}
+
+.activity p:nth-child(2) {
+  margin-top: 6px;
+  color: #3f6ad8;
+  font-weight: normal;
+  font-size: 14px;
+  background-color: transparent;
+}
+
 .container {
   background-color: #f1f4f6;
   display: flex;
@@ -218,4 +314,64 @@ nav {
   font-weight: 400;
   line-height: 1.5;
   padding-left: 15px;
+}
+
+.sidemenu-container {
+  position: absolute;
+  background-color: #fff;
+  height: 100%;
+  min-height: 100%;
+  width: 280px;
+  top: 0;
+  left: -1000px;
+  transition: 0.3s ease-in;
+  box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
+}
+
+.sidemenu-container.show {
+  left: 0;
+}
+
+.academic,
+.exam,
+.hostel,
+.other,
+.help {
+  padding: 2px 1.5rem 0;
+}
+
+.academic .title,
+.exam .title,
+.hostel .title,
+.other .title,
+.help .title {
+  text-transform: uppercase;
+  font-size: .8rem;
+  margin: 0.65rem 0 0.35rem 0;
+  font-weight: bold;
+  color: #3f6ad8;
+}
+
+.help {
+  padding-bottom: 1.5rem;
+}
+
+ul li {
+  list-style-type: none;
+  margin: 0.65rem 0 0.35rem 0;
+  padding: 0 24px 0 45px;
+  line-height: 24px;
+  font-size: 14px;
+  font-weight: normal;
+  color: #343a40;
+}
+
+.li-icon {
+    width: 28px;
+    height: 20px;
+    line-height: 24px;
+    position: absolute;
+    left: 30px;
+    opacity: 0.4;
+    color: #343a40;
 }

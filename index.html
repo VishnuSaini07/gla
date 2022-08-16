@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Student Corner</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 </head>
 <body>
   <nav>
-    <div class="hamburgur">
+    <div class="hamburgur" id="side-menu">
       <ion-icon class="icon" name="menu-outline"></ion-icon>
     </div>
     <div class="logo">
@@ -41,8 +41,26 @@
 
   <div class="newModal">
     <div class="action">
-      <div class="user-content"></div>
-      <div class="activity"></div>
+      <div class="user-content">
+        <div class="frame"></div>
+        <div class="user-data">
+          <div class="user-image">
+            <img src="img/user.jpg" alt="">
+          </div>
+          <div class="clg-details">
+            <p class="name">Vishnu Saini (2184200103)</p>
+            <p class="course">MCA : III Sem.</p>
+            <p class="place">Mathura Campus</p>
+          </div>
+          <div class="logout">
+            <p>Logout</p>
+          </div>
+        </div>
+      </div>
+      <div class="activity">
+        <p>ACTIVITY</p>
+        <p>Change Password</p>
+      </div>
     </div>
   </div>
 
@@ -67,8 +85,10 @@
     </div>
     <div class="percentage">
       <div class="perc">
-        <p class="value">NaN%</p>
-        <div class="progress"></div>
+        <p class="value" style="color: #3ac47d">96.43%</p>
+        <div class="progress">
+          <div class="line" style="width: 96.43%;"></div>
+        </div>
       </div>
       <p class="text">Attendance Percentage</p>
     </div>
@@ -97,6 +117,64 @@
     </div>
   </div>
 
+  <div class="sidemenu-container">
+    <div class="academic">
+      <p class="title">Academic</p>
+      <ul>
+        <li><img class="li-icon" src="img/graph1.svg" alt="">Dashboard</li>
+        <li><img class="li-icon" src="img/graph1.svg" alt="">Covid-19 Details</li>
+        <li><img class="li-icon" src="img/rocket.svg" alt="">Registration</li>
+        <li><img class="li-icon" src="img/rocket.svg" alt="">Main Account</li>
+        <li><img class="li-icon" src="img/graph1.svg" alt="">Policies</li>
+        <li><img class="li-icon" src="img/rocket.svg" alt="">My Advisor</li>
+        <li><img class="li-icon" src="img/rocket.svg" alt="">Fee Details</li>
+        <li><img class="li-icon" src="img/graph1.svg" alt="">Value Added Course</li>
+        <li><img class="li-icon" src="img/graph1.svg" alt="">Online Class</li>
+        <li><img class="li-icon" src="img/rocket.svg" alt="">Immersion</li>
+        <li><img class="li-icon" src="img/graph1.svg" alt="">Questionnaire Panel</li>
+        <li><img class="li-icon" src="img/rocket.svg" alt="">Project</li>
+        <li><img class="li-icon" src="img/graph1.svg" alt="">GLAMS Notification</li>
+      </ul>
+    </div>
+    <div class="exam">
+      <p class="title">Exam</p>
+      <ul>
+        <li><img class="li-icon" src="img/graph1.svg" alt="">View Result</li>
+        <li><img class="li-icon" src="img/graph1.svg" alt="">Odd Sem Grade</li>
+        <li><img class="li-icon" src="img/graph1.svg" alt="">CPI Calculator</li>
+        <li><img class="li-icon" src="img/graph1.svg" alt="">Achievements</li>
+      </ul>
+    </div>
+    <div class="hostel">
+      <div class="title">Hostel/mess/transport</div>
+      <ul>
+        <li><img class="li-icon" src="img/graph1.svg" alt="">Book My Hostel</li>
+      </ul>
+    </div>
+    <div class="other">
+      <p class="title">other</p>
+      <ul>
+        <li><img class="li-icon" src="img/rocket.svg" alt="">Library Account</li>
+        <li><img class="li-icon" src="img/graph1.svg" alt="">Service Request</li>
+        <li><img class="li-icon" src="img/graph1.svg" alt="">Sports Facilities</li>
+        <li><img class="li-icon" src="img/graph1.svg" alt="">Search Faculty</li>
+        <li><img class="li-icon" src="img/graph1.svg" alt="">Notice Corner</li>
+        <li><img class="li-icon" src="img/rocket.svg" alt="">Placement</li>
+        <li><img class="li-icon" src="img/graph1.svg" alt="">Book My Hostel</li>
+        <li><img class="li-icon" src="img/graph1.svg" alt="">Counselling</li>
+        <li><img class="li-icon" src="img/graph1.svg" alt="">Scholarship</li>
+        <li><img class="li-icon" src="img/browser.svg" alt="">Event Calendar</li>
+      </ul>
+    </div>
+    <div class="help">
+      <p class="title">help</p>
+      <ul>
+        <li><img class="li-icon" src="img/graph1.svg" alt="">Help Desk</li>
+        <li><img class="li-icon" src="img/graph1.svg" alt="">Videos</li>
+      </ul>
+    </div>
+  </div>
+
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
@@ -105,6 +183,8 @@
   var btn = document.querySelector("#btn");
   var newModal = document.querySelector(".newModal");
   var btn2 = document.querySelector("#btn2");
+  var sideMenu = document.querySelector("#side-menu");
+  var sideMenuCont = document.querySelector('.sidemenu-container');
 
   btn.addEventListener("click", ()=> {
     modal.classList.toggle("active");
@@ -114,6 +194,11 @@
   btn2.addEventListener("click", ()=> {
     newModal.classList.toggle("active");
   });
+
+  sideMenu.addEventListener("click", () => {
+    sideMenuCont.classList.toggle("show");
+    newModal.classList.remove("active");
+  })
   
 </script>
 </body>
