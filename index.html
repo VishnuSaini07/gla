@@ -11,14 +11,16 @@
 <body>
   <nav>
     <div class="hamburgur" id="side-menu">
-      <ion-icon class="icon" name="menu-outline"></ion-icon>
+      <!-- <ion-icon class="icon" name="menu-outline"></ion-icon> -->
+      <img id="icon" src="img/menu.svg" style="filter: invert();" alt="">
     </div>
     <div class="logo">
-      <!-- <img src="img/logo.png" alt=""> -->
+      <img src="img/logo.png" alt="">
     </div>
     <div class="menu" id="btn">
       <div class="menu-border">
         <ion-icon name="ellipsis-vertical"></ion-icon>
+        <!-- <img src="img/more-vertical.svg" alt=""> -->
       </div>
     </div>
   </nav>
@@ -115,6 +117,17 @@
       </div>
       <p class="text">Result Percentage</p>
     </div>
+    <div class="attendance">
+      <div class="attendance-box1">
+        <div class="heading">
+          <p class="title">Attendance</p>
+        </div>
+        <div class="academy-attendance">
+          <p class="underline">Academic Attendance</p>
+          <p>Emersion Attendance</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="sidemenu-container">
@@ -123,16 +136,16 @@
       <ul>
         <li><img class="li-icon" src="img/graph1.svg" alt="">Dashboard</li>
         <li><img class="li-icon" src="img/graph1.svg" alt="">Covid-19 Details</li>
-        <li><img class="li-icon" src="img/rocket.svg" alt="">Registration</li>
-        <li><img class="li-icon" src="img/rocket.svg" alt="">Main Account</li>
+        <li><img class="li-icon" src="img/rocket.svg" alt="">Registration <img class="li-icon2" src="img/chevron-down.svg" alt=""></li>
+        <li><img class="li-icon" src="img/rocket.svg" alt="">Main Account <img class="li-icon2" src="img/chevron-down.svg" alt=""></li>
         <li><img class="li-icon" src="img/graph1.svg" alt="">Policies</li>
-        <li><img class="li-icon" src="img/rocket.svg" alt="">My Advisor</li>
-        <li><img class="li-icon" src="img/rocket.svg" alt="">Fee Details</li>
+        <li><img class="li-icon" src="img/rocket.svg" alt="">My Advisor <img class="li-icon2" src="img/chevron-down.svg" alt=""></li>
+        <li><img class="li-icon" src="img/rocket.svg" alt="">Fee Details <img class="li-icon2" src="img/chevron-down.svg" alt=""></li>
         <li><img class="li-icon" src="img/graph1.svg" alt="">Value Added Course</li>
         <li><img class="li-icon" src="img/graph1.svg" alt="">Online Class</li>
-        <li><img class="li-icon" src="img/rocket.svg" alt="">Immersion</li>
+        <li><img class="li-icon" src="img/rocket.svg" alt="">Immersion <img class="li-icon2" src="img/chevron-down.svg" alt=""></li>
         <li><img class="li-icon" src="img/graph1.svg" alt="">Questionnaire Panel</li>
-        <li><img class="li-icon" src="img/rocket.svg" alt="">Project</li>
+        <li><img class="li-icon" src="img/rocket.svg" alt="">Project <img class="li-icon2" src="img/chevron-down.svg" alt=""></li>
         <li><img class="li-icon" src="img/graph1.svg" alt="">GLAMS Notification</li>
       </ul>
     </div>
@@ -154,12 +167,12 @@
     <div class="other">
       <p class="title">other</p>
       <ul>
-        <li><img class="li-icon" src="img/rocket.svg" alt="">Library Account</li>
+        <li><img class="li-icon" src="img/rocket.svg" alt="">Library Account <img class="li-icon2" src="img/chevron-down.svg" alt=""></li>
         <li><img class="li-icon" src="img/graph1.svg" alt="">Service Request</li>
         <li><img class="li-icon" src="img/graph1.svg" alt="">Sports Facilities</li>
         <li><img class="li-icon" src="img/graph1.svg" alt="">Search Faculty</li>
         <li><img class="li-icon" src="img/graph1.svg" alt="">Notice Corner</li>
-        <li><img class="li-icon" src="img/rocket.svg" alt="">Placement</li>
+        <li><img class="li-icon" src="img/rocket.svg" alt="">Placement <img class="li-icon2" src="img/chevron-down.svg" alt=""></li>
         <li><img class="li-icon" src="img/graph1.svg" alt="">Book My Hostel</li>
         <li><img class="li-icon" src="img/graph1.svg" alt="">Counselling</li>
         <li><img class="li-icon" src="img/graph1.svg" alt="">Scholarship</li>
@@ -175,6 +188,7 @@
     </div>
   </div>
 
+
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
@@ -185,6 +199,7 @@
   var btn2 = document.querySelector("#btn2");
   var sideMenu = document.querySelector("#side-menu");
   var sideMenuCont = document.querySelector('.sidemenu-container');
+  var icon = document.getElementById('icon');
 
   btn.addEventListener("click", ()=> {
     modal.classList.toggle("active");
@@ -199,6 +214,14 @@
     sideMenuCont.classList.toggle("show");
     newModal.classList.remove("active");
   })
+
+  icon.onclick = function() {
+    if(sideMenuCont.classList.contains("show")) {
+      icon.src = "img/menu.svg";
+    } else {
+      icon.src = "img/x.svg";
+    }
+  }
   
 </script>
 </body>

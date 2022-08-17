@@ -42,6 +42,9 @@ nav {
 .logo {
   width: 80%;
   height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu {
@@ -374,4 +377,65 @@ ul li {
     left: 30px;
     opacity: 0.4;
     color: #343a40;
+}
+
+.li-icon2 {
+  width: 16px;
+  height: 14px;
+  position: absolute;
+  right: 30px;
+  opacity: 0.4;
+  color: #343a40;
+}
+
+.attendance {
+  height: 84px;
+  /* width: 100%; */
+  background-color: #fff;
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(26, 54, 126, 0.125);
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  margin: 15px;
+  margin-bottom: 0;
+  box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03),
+              0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03), 
+              0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05), 
+              0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+}
+.attendance-box1 .heading {
+  display: flex;
+  justify-content: center;
+}
+
+.attendance-box1 .title {
+  font-size: 1.1rem;
+  line-height: 1;
+  font-weight: 400;
+  color: rgba(13, 27, 62, 0.7);
+}
+
+.academy-attendance {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.academy-attendance p {
+  margin-top: 20px;
+  color: #3f6ad8;
+  font-size: 14px;
+}
+
+.academy-attendance .underline::before {
+  content: '';
+  border-radius: 15px;
+  background: #3f6ad8;
+  transition: all .2s;
+  height: 4px;
+  width: 40%;
+  position: absolute;
+  left: 10%;
+  bottom: -2px;
 }
